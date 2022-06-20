@@ -8,9 +8,11 @@
 </head>
 <body>
     <h1>Edit Skill</h1>
-    <form action="" method="POST" autocomplete="off">
+    <form action="/skills/<%= skill._id %>?_method=PUT" method="POST" autocomplete="off">
         <input value="<%= skill.name %>" type="text" name="name">
-        <button type="submit">Save Skill</button>
+        <input type="checkbox" <%= skill.proficient ? 'checked' : ''%>  name="proficient" id="">Proficient?
+        <br><br>
+        <button type="submit">Update Skill</button>
     </form><br>
     <a href="/skills/<%= skill._id %>">Cancel</a>
 </body>
